@@ -4,28 +4,47 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Employee Home Page</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+    rel="stylesheet"
+  />
   <style>
     body {
       font-family: "Poppins", sans-serif;
       margin: 0;
-      background: #ffffff; /* Page background white */
+      background: #ffffff;
       display: flex;
       height: 100vh;
     }
 
     /* ===== SIDEBAR ===== */
     .sidebar {
-      background-color: #1e3c72; /* Blue sidebar */
+      background-color: #1e3c72;
       width: 260px;
       padding: 30px 20px;
       box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
       color: white;
     }
 
-    .sidebar h3 {
-      text-align: center;
-      margin-bottom: 30px;
-      letter-spacing: 1px;
+    .profile-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+
+    .profile-pic {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #ffcc00; /* yellow profile ring */
+    }
+
+    .profile-header h3 {
+      font-size: 18px;
+      font-weight: 600;
+      margin: 0;
       color: white;
     }
 
@@ -35,15 +54,27 @@
     }
 
     .sidebar li {
-      padding: 12px 0;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-      cursor: pointer;
-      transition: color 0.3s;
-      color: white;
+      margin-bottom: 12px;
     }
 
-    .sidebar li:hover {
-      color: #ffcc00;
+    .sidebar a {
+      display: block;
+      padding: 10px;
+      border-radius: 4px;
+      color: white;
+      text-decoration: none;
+      transition: color 0.3s, background 0.3s, border-left 0.3s;
+    }
+
+    .sidebar a:hover {
+      color: #ffcc00; /* hover yellow */
+    }
+
+    .sidebar a.active {
+      background-color: #eff6ff;
+      color: #1e3c72;
+      font-weight: 600;
+      border-left: 4px solid #ffcc00; /* yellow left border */
     }
 
     /* ===== CONTENT AREA ===== */
@@ -51,9 +82,9 @@
       flex: 1;
       text-align: center;
       justify-content: center;
-      background-color: #ffffff; /* Content background white */
+      background-color: #ffffff;
       padding: 50px;
-      color: #1e3c72; /* Dark blue text */
+      color: #1e3c72;
     }
 
     .content h2 {
@@ -98,12 +129,8 @@
     }
 
     @keyframes progress {
-      from {
-        stroke-dashoffset: 440;
-      }
-      to {
-        stroke-dashoffset: 88;
-      }
+      from { stroke-dashoffset: 440; }
+      to { stroke-dashoffset: 88; }
     }
 
     .number {
@@ -150,28 +177,23 @@
       border: 1px solid #ccc;
     }
 
-    .color-box.present {
-      background-color: #1e3c72;
-      border: none;
-    }
-
-    .color-box.absent {
-      background-color: #fef9c3;
-      border: none;
-    }
-
-    .color-box.leave {
-      background-color: #ffffff;
-    }
+    .color-box.present { background-color: #1e3c72; border: none; }
+    .color-box.absent { background-color: #fef9c3; border: none; }
+    .color-box.leave { background-color: #ffffff; }
   </style>
 </head>
 <body>
   <aside class="sidebar">
-    <h3>PROFILE</h3>
+    <div class="profile-header">
+      <img src="../payslip/Assets/user.png" alt="Profile" class="profile-pic" />
+      <h3>PROFILE</h3>
+    </div>
     <ul>
-      <li>Employee Login</li>
-      <li>Employee Details</li>
-      <li>Employee Salary Details</li>
+      <li><a href="#" class="active">Attendance</a></li>
+      <li><a href="../payslip/payslip.html">Payslip Download</a></li>
+      <li><a href="#">Paid Leaves Remaining</a></li>
+      <li><a href="#">See Holidays</a></li>
+      <li><a href="#">Checkin - Checkout</a></li>
     </ul>
   </aside>
 
