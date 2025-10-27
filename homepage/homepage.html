@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Employee Home Page</title>
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      margin: 0;
+      background: #ffffff; /* Page background white */
+      display: flex;
+      height: 100vh;
+    }
+
+    /* ===== SIDEBAR ===== */
+    .sidebar {
+      background-color: #1e3c72; /* Blue sidebar */
+      width: 260px;
+      padding: 30px 20px;
+      box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+      color: white;
+    }
+
+    .sidebar h3 {
+      text-align: center;
+      margin-bottom: 30px;
+      letter-spacing: 1px;
+      color: white;
+    }
+
+    .sidebar ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .sidebar li {
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      cursor: pointer;
+      transition: color 0.3s;
+      color: white;
+    }
+
+    .sidebar li:hover {
+      color: #ffcc00;
+    }
+
+    /* ===== CONTENT AREA ===== */
+    .content {
+      flex: 1;
+      text-align: center;
+      justify-content: center;
+      background-color: #ffffff; /* Content background white */
+      padding: 50px;
+      color: #1e3c72; /* Dark blue text */
+    }
+
+    .content h2 {
+      margin-bottom: 40px;
+    }
+
+    /* ===== ATTENDANCE CIRCLE ===== */
+    .circle {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .percent {
+      position: relative;
+      width: 150px;
+      height: 150px;
+    }
+
+    .percent svg {
+      position: relative;
+      width: 150px;
+      height: 150px;
+      transform: rotate(-90deg);
+    }
+
+    .percent svg circle {
+      width: 100%;
+      height: 100%;
+      fill: none;
+      stroke-width: 10;
+      stroke: #eee;
+      transform: translate(5px, 5px);
+      stroke-linecap: round;
+    }
+
+    .percent svg circle:nth-child(2) {
+      stroke-dasharray: 440;
+      stroke-dashoffset: 88; /* 80% filled */
+      stroke: #1e3c72;
+      animation: progress 2s ease;
+    }
+
+    @keyframes progress {
+      from {
+        stroke-dashoffset: 440;
+      }
+      to {
+        stroke-dashoffset: 88;
+      }
+    }
+
+    .number {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    .number h3 {
+      color: #1e3c72;
+      font-size: 2.2em;
+      margin: 0;
+      text-align: center;
+    }
+
+    /* ===== STATUS LABELS ===== */
+    .status {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 20px;
+    }
+
+    .status-item {
+      display: flex;
+      align-items: center;
+      font-size: 14px;
+      font-weight: 500;
+      color: #1e3c72;
+    }
+
+    .color-box {
+      width: 16px;
+      height: 16px;
+      border-radius: 4px;
+      margin-right: 8px;
+      border: 1px solid #ccc;
+    }
+
+    .color-box.present {
+      background-color: #1e3c72;
+      border: none;
+    }
+
+    .color-box.absent {
+      background-color: #fef9c3;
+      border: none;
+    }
+
+    .color-box.leave {
+      background-color: #ffffff;
+    }
+  </style>
+</head>
+<body>
+  <aside class="sidebar">
+    <h3>PROFILE</h3>
+    <ul>
+      <li>Employee Login</li>
+      <li>Employee Details</li>
+      <li>Employee Salary Details</li>
+    </ul>
+  </aside>
+
+  <main class="content">
+    <h2><u>Nobita</u></h2>
+    <h2>OVERALL ATTENDANCE IN THIS MONTH</h2>
+
+    <div class="attendance">
+      <div class="circle">
+        <div class="percent">
+          <svg>
+            <circle cx="70" cy="70" r="70"></circle>
+            <circle cx="70" cy="70" r="70"></circle>
+          </svg>
+          <div class="number">
+            <h3>80<span>%</span></h3>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="status">
+      <div class="status-item"><span class="color-box present"></span> Present</div>
+      <div class="status-item"><span class="color-box absent"></span> Absent</div>
+      <div class="status-item"><span class="color-box leave"></span> Leave</div>
+    </div>
+  </main>
+</body>
+</html>
