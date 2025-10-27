@@ -1,169 +1,180 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Payslip Dashboard</title>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
-      rel="stylesheet"
-    />
-    <style>
-      body {
-        font-family: "Poppins", sans-serif;
-        margin: 0;
-        background: #ffffff;
-        display: flex;
-        height: 100vh;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Payslip Dashboard</title>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    /* Reset to ensure consistent sizing */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-      /* ===== SIDEBAR (same as homepage) ===== */
-      .sidebar {
-        background-color: #1e3c72;
-        width: 260px;
-        padding: 30px 20px;
-        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
-        color: white;
-      }
+    body {
+      font-family: "Poppins", sans-serif;
+      background: #ffffff;
+      display: flex;
+      height: 100vh;
+    }
 
-      .profile-header {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        margin-bottom: 20px;
-      }
+    /* ===== SIDEBAR ===== */
+    .sidebar {
+      background-color: #1e3c72;
+      width: 260px;          /* fixed width */
+      min-width: 260px;
+      max-width: 260px;
+      padding: 30px 20px;
+      box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+      color: white;
+    }
 
-      .profile-pic {
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        object-fit: cover;
-        border: 3px solid #ffcc00; /* yellow profile ring */
-      }
+    .profile-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
 
-      .profile-header h3 {
-        font-size: 18px;
-        font-weight: 600;
-        margin: 0;
-        color: white;
-      }
+    .profile-pic {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #ffcc00; /* yellow profile ring */
+    }
 
-      .sidebar ul {
-        list-style: none;
-        padding-left: 0;
-      }
+    .profile-header h3 {
+      font-size: 18px;
+      font-weight: 600;
+      margin: 0;
+      color: white;
+    }
 
-      .sidebar li {
-        margin-bottom: 12px;
-      }
+    .sidebar ul {
+      list-style: none;
+      padding-left: 0;
+    }
 
-      .sidebar a {
-        display: block;
-        padding: 10px;
-        border-radius: 4px;
-        color: white;
-        text-decoration: none;
-        transition: color 0.3s, background 0.3s, border-left 0.3s;
-      }
+    .sidebar li {
+      margin-bottom: 12px;
+    }
 
-      .sidebar a:hover {
-        color: #ffcc00; /* hover yellow */
-      }
+    .sidebar a {
+      display: block;
+      padding: 10px;
+      border-radius: 4px;
+      color: white;
+      text-decoration: none;
+      transition: color 0.3s, background 0.3s, border-left 0.3s;
+    }
 
-      .sidebar a.active {
-        background-color: #eff6ff;
-        color: #1e3c72;
-        font-weight: 600;
-        border-left: 4px solid #ffcc00; /* yellow left border */
-      }
+    .sidebar a:hover {
+      color: #ffcc00; /* hover yellow */
+    }
 
-      /* ===== MAIN CONTENT ===== */
-      .main {
-        flex: 1;
-        padding: 40px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-      }
+    .sidebar a.active {
+      background-color: #eff6ff;
+      color: #1e3c72;
+      font-weight: 600;
+      border-left: 4px solid #ffcc00; /* yellow left border */
+    }
 
-      .main h1 {
-        font-size: 22px;
-        color: #1e3c72;
-        margin-bottom: 30px;
-        text-align: center;
-      }
+    /* ===== MAIN CONTENT ===== */
+    .main {
+      flex: 1;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 
-      .dropdown-label {
-        font-size: 14px;
-        color: #1e3c72;
-        margin-bottom: 8px;
-        font-weight: 500;
-      }
+    .main h1 {
+      font-size: 22px;
+      color: #1e3c72;
+      margin-bottom: 30px;
+      text-align: center;
+    }
 
-      select {
-        width: 440px;
-        padding: 10px;
-        font-size: 14px;
-        border-radius: 6px;
-        border: 1px solid #ddd;
-        color: #1e3a8a;
-        margin-bottom: 20px;
-        box-sizing: border-box;
-      }
+    .dropdown-label {
+      font-size: 14px;
+      color: #1e3c72;
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
 
-      .generate-btn {
-        width: 240px;
-        padding: 10px;
-        font-size: 15px;
-        font-weight: 600;
-        text-transform: uppercase;
-        background: #fff;
-        color: #1e3a8a;
-        border: 2px solid #1e3a8a;
-        border-radius: 6px;
-        cursor: pointer;
-      }
+    select {
+      width: 440px;
+      padding: 10px;
+      font-size: 14px;
+      border-radius: 6px;
+      border: 1px solid #ddd;
+      color: #1e3a8a;
+      margin-bottom: 20px;
+      box-sizing: border-box;
+    }
 
-      .generate-btn:hover {
-        background: #eff6ff;
-      }
-    </style>
-  </head>
-  <body>
-    <aside class="sidebar">
+    .generate-btn {
+      width: 240px;
+      padding: 10px;
+      font-size: 15px;
+      font-weight: 600;
+      text-transform: uppercase;
+      background: #fff;
+      color: #1e3a8a;
+      border: 2px solid #1e3a8a;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .generate-btn:hover {
+      background: #eff6ff;
+    }
+  </style>
+</head>
+<body>
+  <aside class="sidebar">
+    <!-- PROFILE clickable back to homepage -->
+    <a href="../homepage/homepage.html" style="text-decoration:none; color:white;">
       <div class="profile-header">
         <img src="Assets/user.png" alt="Profile" class="profile-pic" />
         <h3>PROFILE</h3>
       </div>
-      <ul>
-        <li><a href="#">Attendance</a></li>
-        <li><a href="#" class="active">Payslip Download</a></li>
-        <li><a href="#">Paid Leaves Remaining</a></li>
-        <li><a href="#">See Holidays</a></li>
-        <li><a href="#">Checkin - Checkout</a></li>
-      </ul>
-    </aside>
+    </a>
+    <ul>
+      <li><a href="#">Attendance</a></li> <!-- does nothing -->
+      <li><a href="#" class="active">Payslip Download</a></li>
+      <li><a href="#">Paid Leaves Remaining</a></li>
+      <li><a href="#">See Holidays</a></li>
+      <li><a href="#">Checkin - Checkout</a></li>
+    </ul>
+  </aside>
 
-    <main class="main">
-      <h1>Payslip</h1>
-      <div class="dropdown-label">Select:</div>
-      <select>
-        <option selected>Select Month</option>
-        <option>January</option>
-        <option>February</option>
-        <option>March</option>
-        <option>April</option>
-        <option>May</option>
-        <option>June</option>
-        <option>July</option>
-        <option>August</option>
-        <option>September</option>
-        <option>October</option>
-        <option>November</option>
-        <option>December</option>
-      </select>
-      <br />
-      <button class="generate-btn">Generate Payslip</button>
-    </main>
-  </body>
+  <main class="main">
+    <h1>Payslip</h1>
+    <div class="dropdown-label">Select:</div>
+    <select>
+      <option selected>Select Month</option>
+      <option>January</option>
+      <option>February</option>
+      <option>March</option>
+      <option>April</option>
+      <option>May</option>
+      <option>June</option>
+      <option>July</option>
+      <option>August</option>
+      <option>September</option>
+      <option>October</option>
+      <option>November</option>
+      <option>December</option>
+    </select>
+    <br />
+    <button class="generate-btn">Generate Payslip</button>
+  </main>
+</body>
 </html>

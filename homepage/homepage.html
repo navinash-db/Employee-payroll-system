@@ -9,9 +9,15 @@
     rel="stylesheet"
   />
   <style>
+    /* Reset for consistency */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
       font-family: "Poppins", sans-serif;
-      margin: 0;
       background: #ffffff;
       display: flex;
       height: 100vh;
@@ -20,9 +26,11 @@
     /* ===== SIDEBAR ===== */
     .sidebar {
       background-color: #1e3c72;
-      width: 260px;
+      width: 260px;          /* fixed width */
+      min-width: 260px;
+      max-width: 260px;
       padding: 30px 20px;
-      box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+      box-shadow: 2px 0 10px rgba(0,0,0,0.1);
       color: white;
     }
 
@@ -38,7 +46,7 @@
       height: 50px;
       border-radius: 50%;
       object-fit: cover;
-      border: 3px solid #ffffff; /* profile ring (white for now) */
+      border: 3px solid #ffcc00; /* yellow profile ring */
     }
 
     .profile-header h3 {
@@ -63,7 +71,7 @@
       border-radius: 4px;
       color: white;
       text-decoration: none;
-      transition: color 0.3s, background 0.3s, border-left 0.3s;
+      transition: color 0.3s;
     }
 
     .sidebar a:hover {
@@ -98,15 +106,12 @@
     }
 
     .percent svg {
-      position: relative;
       width: 150px;
       height: 150px;
       transform: rotate(-90deg);
     }
 
     .percent svg circle {
-      width: 100%;
-      height: 100%;
       fill: none;
       stroke-width: 10;
       stroke: #eee;
@@ -131,19 +136,12 @@
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-      height: 100%;
-      pointer-events: none;
     }
 
     .number h3 {
       color: #1e3c72;
       font-size: 2.2em;
       margin: 0;
-      text-align: center;
     }
 
     /* ===== STATUS LABELS ===== */
@@ -177,12 +175,15 @@
 </head>
 <body>
   <aside class="sidebar">
-    <div class="profile-header">
-      <img src="../payslip/Assets/user.png" alt="Profile" class="profile-pic" />
-      <h3>PROFILE</h3>
-    </div>
+    <!-- Profile clickable (reloads homepage) -->
+    <a href="homepage.html" style="text-decoration:none; color:white;">
+      <div class="profile-header">
+        <img src="../payslip/Assets/user.png" alt="Profile" class="profile-pic" />
+        <h3>PROFILE</h3>
+      </div>
+    </a>
     <ul>
-      <li><a href="#">Attendance</a></li>
+      <li><a href="#">Attendance</a></li> <!-- does nothing -->
       <li><a href="../payslip/payslip.html">Payslip Download</a></li>
       <li><a href="#">Paid Leaves Remaining</a></li>
       <li><a href="#">See Holidays</a></li>
