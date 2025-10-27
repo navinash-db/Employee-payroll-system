@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Company Login</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: "Poppins", sans-serif;
+        background: #ffffff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+
+      .login-box {
+        width: 340px;
+        padding: 30px 40px;
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        text-align: center;
+      }
+
+      .login-box h1 {
+        margin-bottom: 25px;
+        font-size: 22px;
+        font-weight: 600;
+        color: #1e3c72;
+      }
+
+      .login-box label {
+        display: block;
+        text-align: left;
+        margin: 0 auto 5px;
+        width: 100%;
+        font-weight: 500;
+        font-size: 14px;
+        color: #1e3c72;
+      }
+
+      .login-box input {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ddd;
+        border-radius: 6px;
+        font-size: 14px;
+        /* background: #fef9c3; */
+        box-sizing: border-box;
+      }
+
+      /* Shared button styles */
+      .btn-primary,
+      .btn-secondary {
+        display: block;
+        width: 100%;
+        height: 44px;
+        padding: 10px;
+        box-sizing: border-box;
+        text-align: center;
+        font-size: 15px;
+        font-weight: 600;
+        text-transform: uppercase;
+        border-radius: 6px;
+        cursor: pointer;
+        text-decoration: none;
+        line-height: 1.2;
+      }
+
+      .btn-primary {
+        background: #1e3c72;
+        color: white;
+        border: none;
+        margin-bottom: 12px;
+      }
+
+      .btn-primary:hover {
+        background: #2a5298;
+      }
+
+      .btn-secondary {
+        background: #fff;
+        color: #1e3c72;
+        border: 2px solid #1e3c72;
+      }
+
+      .btn-secondary:hover {
+        background: #eff6ff;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="login-box">
+      <h1><i>Nexovate</i></h1>
+      <form>
+        <label for="employee">Employee Name:</label>
+        <input type="text" id="employee" name="employee" required />
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required />
+
+        <button type="submit" class="btn-primary">Log-In</button>
+      </form>
+
+      <a href="admin.html" class="btn-secondary">Administration Login</a>
+    </div>
+  </body>
+</html>
