@@ -17,74 +17,72 @@
         height: 100vh;
       }
 
-      /* Sidebar */
+      /* ===== SIDEBAR (same as homepage) ===== */
       .sidebar {
-        width: 220px;
-        background: #fff;
-        border-right: 2px solid #1e3c72;
+        background-color: #1e3c72;
+        width: 260px;
         padding: 30px 20px;
+        box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+        color: white;
       }
 
       .profile-header {
         display: flex;
         align-items: center;
         gap: 10px;
-        margin-bottom: 10px;
+        margin-bottom: 20px;
       }
 
       .profile-pic {
-        width: 40px;
-        height: 40px;
+        width: 50px;
+        height: 50px;
         border-radius: 50%;
         object-fit: cover;
-        border: 2px solid #1e3c72;
+        border: 3px solid #ffcc00; /* yellow profile ring */
       }
 
-      .profile-header h2 {
+      .profile-header h3 {
         font-size: 18px;
         font-weight: 600;
-        color: #1e3c72;
         margin: 0;
-      }
-
-      .divider {
-        border: none;
-        border-top: 2px solid #1e3c72;
-        margin: 12px -20px 20px;
+        color: white;
       }
 
       .sidebar ul {
-        list-style-type: none;
+        list-style: none;
         padding-left: 0;
-        font-size: 14px;
       }
 
-      .sidebar ul li {
-        color: #1e3c72;
+      .sidebar li {
         margin-bottom: 12px;
-        padding: 6px 10px;
+      }
+
+      .sidebar a {
+        display: block;
+        padding: 10px;
         border-radius: 4px;
-        cursor: pointer;
+        color: white;
+        text-decoration: none;
+        transition: color 0.3s, background 0.3s, border-left 0.3s;
       }
 
-      .sidebar ul li.active {
+      .sidebar a:hover {
+        color: #ffcc00; /* hover yellow */
+      }
+
+      .sidebar a.active {
         background-color: #eff6ff;
+        color: #1e3c72;
         font-weight: 600;
-        border-left: 4px solid #1e3c72;
+        border-left: 4px solid #ffcc00; /* yellow left border */
       }
 
-      /*Hover effect in yellow
-      .sidebar ul li:hover {
-        background-color: #fef9c3;
-      }*/
-
-      /* Main content */
+      /* ===== MAIN CONTENT ===== */
       .main {
         flex: 1;
         padding: 40px;
         display: flex;
         flex-direction: column;
-        /* justify-content: center; */
         align-items: center;
       }
 
@@ -97,7 +95,7 @@
 
       .dropdown-label {
         font-size: 14px;
-        color: #1e3c72; /* golden yellow */
+        color: #1e3c72;
         margin-bottom: 8px;
         font-weight: 500;
       }
@@ -108,7 +106,6 @@
         font-size: 14px;
         border-radius: 6px;
         border: 1px solid #ddd;
-        /* background: #fef9c3; */
         color: #1e3a8a;
         margin-bottom: 20px;
         box-sizing: border-box;
@@ -133,22 +130,21 @@
     </style>
   </head>
   <body>
-    <div class="sidebar">
+    <aside class="sidebar">
       <div class="profile-header">
         <img src="Assets/user.png" alt="Profile" class="profile-pic" />
-        <h2>PROFILE</h2>
+        <h3>PROFILE</h3>
       </div>
-      <hr class="divider" />
       <ul>
-        <li>Attendance</li>
-        <li class="active">Payslip Download</li>
-        <li>Paid Leaves Remaining</li>
-        <li>See Holidays</li>
-        <li>Checkin - Checkout</li>
+        <li><a href="#">Attendance</a></li>
+        <li><a href="#" class="active">Payslip Download</a></li>
+        <li><a href="#">Paid Leaves Remaining</a></li>
+        <li><a href="#">See Holidays</a></li>
+        <li><a href="#">Checkin - Checkout</a></li>
       </ul>
-    </div>
+    </aside>
 
-    <div class="main">
+    <main class="main">
       <h1>Payslip</h1>
       <div class="dropdown-label">Select:</div>
       <select>
@@ -168,6 +164,6 @@
       </select>
       <br />
       <button class="generate-btn">Generate Payslip</button>
-    </div>
+    </main>
   </body>
 </html>
