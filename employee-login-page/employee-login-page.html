@@ -52,11 +52,9 @@
         border: 1px solid #ddd;
         border-radius: 6px;
         font-size: 14px;
-        /* background: #fef9c3; */
         box-sizing: border-box;
       }
 
-      /* Shared button styles */
       .btn-primary,
       .btn-secondary {
         display: block;
@@ -101,14 +99,16 @@
       <h1><i>Nexovate</i></h1>
       <form>
         <label for="employee">Employee Name:</label>
-        <input type="text" id="employee" name="employee" required />
+        <input type="text" id="employee" name="employee" />
 
         <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required />
+        <input type="password" id="password" name="password" />
 
-        <button type="submit" class="btn-primary">Log-In</button>
+        <!-- Redirects to homepage/index.html -->
+        <a href="../homepage/homepage.html" class="btn-primary">Log-In</a>
       </form>
 
+      <!-- Redirects to admin-login-page/admin-login-page.html -->
       <a href="../admin-login-page/admin-login-page.html" class="btn-secondary">Administration Login</a>
     </div>
   </body>
