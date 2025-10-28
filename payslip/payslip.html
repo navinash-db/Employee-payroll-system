@@ -9,15 +9,15 @@
     rel="stylesheet"
   />
   <style>
-    /* Reset to ensure consistent sizing */
+    /* ===== RESET ===== */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
     }
 
     body {
-      font-family: "Poppins", sans-serif;
       background: #ffffff;
       display: flex;
       height: 100vh;
@@ -26,11 +26,11 @@
     /* ===== SIDEBAR ===== */
     .sidebar {
       background-color: #1e3c72;
-      width: 260px;          /* fixed width */
+      width: 260px;
       min-width: 260px;
       max-width: 260px;
       padding: 30px 20px;
-      box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+      box-shadow: 2px 0 10px rgba(0,0,0,0.2);
       color: white;
     }
 
@@ -62,16 +62,21 @@
     }
 
     .sidebar li {
-      margin-bottom: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.3); /* divider line */
+    }
+
+    .sidebar li:last-child {
+      border-bottom: none;
     }
 
     .sidebar a {
       display: block;
-      padding: 10px;
-      border-radius: 4px;
       color: white;
       text-decoration: none;
       transition: color 0.3s, background 0.3s, border-left 0.3s;
+      padding: 8px 10px;
+      border-radius: 4px; /* smooth hover edges */
     }
 
     .sidebar a:hover {
@@ -83,6 +88,8 @@
       color: #1e3c72;
       font-weight: 600;
       border-left: 4px solid #ffcc00; /* yellow left border */
+      border-radius: 6px;             /* smooth rounded corners */
+      padding-left: 12px;             /* adjust padding for alignment */
     }
 
     /* ===== MAIN CONTENT ===== */
@@ -92,6 +99,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      background-color: #f4f6f9;
     }
 
     .main h1 {
@@ -173,6 +181,19 @@
       <option>November</option>
       <option>December</option>
     </select>
+
+    <!-- 
+    Uncomment this block in future to enable year selection
+    <div class="dropdown-label">Select Year:</div>
+    <select>
+      <option selected>Select Year</option>
+      <option>2023</option>
+      <option>2024</option>
+      <option>2025</option>
+      <option>2026</option>
+    </select>
+    -->
+
     <br />
     <button class="generate-btn">Generate Payslip</button>
   </main>
