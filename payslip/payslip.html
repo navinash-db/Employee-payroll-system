@@ -9,7 +9,6 @@
     rel="stylesheet"
   />
   <style>
-    /* ===== RESET ===== */
     * {
       margin: 0;
       padding: 0;
@@ -27,8 +26,6 @@
     .sidebar {
       background-color: #1e3c72;
       width: 260px;
-      min-width: 260px;
-      max-width: 260px;
       padding: 30px 20px;
       box-shadow: 2px 0 10px rgba(0,0,0,0.2);
       color: white;
@@ -62,7 +59,7 @@
     }
 
     .sidebar li {
-      padding: 10px 0;
+      padding: 12px 0;
       border-bottom: 1px solid rgba(255,255,255,0.3);
     }
 
@@ -75,8 +72,10 @@
       color: white;
       text-decoration: none;
       transition: color 0.3s;
-      padding: 8px 10px;
-      border-radius: 4px;
+      font-size: 15px;
+      font-weight: 400;
+      padding: 0;
+      margin-left: 4px;
     }
 
     .sidebar a:hover {
@@ -110,6 +109,7 @@
       color: #1e3c72;
       margin-bottom: 6px;
       font-weight: 500;
+      align-self: flex-start;
     }
 
     select {
